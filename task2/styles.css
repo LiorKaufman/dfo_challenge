@@ -1,0 +1,160 @@
+body {
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  margin: 0px;
+  overflow: auto;
+  overflow-y: scroll !important;
+  height: 100vh !important;
+}
+
+ul {
+  list-style: none;
+}
+.orange-traingle {
+  transform: rotate(90deg);
+}
+
+.mycontainer {
+  overflow: auto;
+  overflow-y: scroll !important;
+  height: 100vh !important;
+}
+
+.header-section {
+  background-image: url(images/bg-hero.jpg);
+  height: 314px;
+  background-repeat: no-repeat !important;
+  background-size: 100% !important;
+  background-position: center !important;
+  background-size: cover !important;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.small-section {
+  width: 100%;
+  color: white;
+}
+
+.small-section-header {
+  background-color: #3675a9;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.main-section {
+  width: 100%;
+  height: 246px;
+  align-items: center;
+}
+
+.bottom-section {
+  height: 216px;
+  border-top: 1px rgb(182, 189, 187) solid !important;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.footer-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  height: 48px;
+  background-color: #3675a9;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  color: white;
+}
+
+.tags {
+  width: auto;
+  background-color: #ececec;
+  border-color: transparent;
+  border-radius: 0.5rem;
+  color: #2d2d2d;
+  padding-right: 8px;
+  padding-left: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 0.85rem;
+  max-width: 240px !important;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.small-print {
+  color: rgb(91, 91, 93);
+  font-size: 0.5rem;
+  margin-bottom: 0px !important;
+}
+
+.button-orange {
+  background-color: rgb(224, 89, 36);
+  width: 100%;
+  border: none;
+  color: white;
+}
+
+.header-section-header {
+  font-weight: bold;
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  margin-left: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.content-square {
+  height: 144px;
+  min-width: 198px;
+  border: 1px solid lightsalmon;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.content-square-header {
+  color: rgb(206, 113, 7);
+  font-weight: 500;
+}
+.content-square-body {
+  font-size: 2rem;
+  border-bottom: 3px double black;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+@media only screen and (max-width: 480px) {
+  .small-section {
+    width: 100%;
+    height: 100px;
+  }
+
+  .main-section {
+    align-items: flex-start;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 3rem;
+  }
+
+  .hidden-col {
+    display: none;
+  }
+  .bottom-section {
+    align-items: flex-start;
+    margin-top: 3rem;
+    height: auto;
+  }
+  .contact-form {
+    margin-left: 2rem;
+  }
+}
