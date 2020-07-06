@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Styles
 import './App.css';
 
 // Components
 import Navbar from './components/Navbar';
-import ArtistsList from './components/ArtistsList';
-import ArtistProfile from './components/ArtistProfile';
+import LandingPage from './components/LandingPage';
+import AboutPage from './components/AboutPage';
+import ExamplePage from './components/ExamplePage';
+import SearchBar from './components/SearchBar';
+import Spinner from './components/Spinner';
 
 //helpers
 import axios from 'axios';
-import SearchBar from './components/SearchBar';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -25,23 +28,47 @@ function App() {
         `http://theaudiodb.com/api/v1/json/1/search.php?s=${query}`
       );
 
-      console.log(result.data);
-
       setItems(result.data.artists);
       setIsLoading(false);
     };
 
     fetchItems();
   }, [query]);
+
   return (
     <>
-      <Navbar />
-      <>
-        <div class='container'>
+      <Router>
+        <Navbar />
+        <div className='container my-container'>
           <SearchBar getQuery={(q) => setQuery(q)} />
-          <ArtistsList isLoading={isLoading} items={items} />
+
+          {isLoading ? (
+            <Spinner />
+          ) : (
+            <>
+              <Route
+                exact
+                path='/'
+                component={() => (
+                  <LandingPage
+                    isLoading={isLoading}
+                    items={items}
+                    getQuery={(q) => setQuery(q)}
+                  />
+                )}
+              />
+            </>
+          )}
+          <>
+            <Switch>
+              <>
+                <Route exact path='/about' component={AboutPage} />
+                <Route exact path='/example' component={ExamplePage} />
+              </>
+            </Switch>
+          </>
         </div>
-      </>
+      </Router>
     </>
   );
 }

@@ -13,7 +13,7 @@ const SearchBar = ({ getQuery }) => {
       <form>
         <input
           type='text'
-          className='form-control'
+          className='form-control search-input'
           placeholder='Search characters'
           value={text}
           onChange={(e) => onChange(e.target.value)}
