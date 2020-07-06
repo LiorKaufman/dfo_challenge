@@ -36,8 +36,8 @@ export default function EditPage({ item, toggleEdit }) {
   }, []);
 
   return (
-    <div>
-      <div className=''>
+    <div className='edit-page'>
+      <div>
         <img
           className='artist-card-img'
           src={item.strArtistThumb ? `${item.strArtistThumb}/preview` : noImage}
@@ -59,6 +59,7 @@ export default function EditPage({ item, toggleEdit }) {
           value={markdown}
           onChange={(e) => handleChange(e)}
           className='show'
+          rows={10}
         ></textarea>
       </div>
     </div>

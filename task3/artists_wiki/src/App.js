@@ -23,7 +23,6 @@ function App() {
   useEffect(() => {
     const fetchItems = async () => {
       setIsLoading(true);
-      console.log(query);
 
       const result = await axios(
         `http://theaudiodb.com/api/v1/json/1/search.php?s=${query}`
@@ -64,7 +63,7 @@ function App() {
             <Switch>
               <>
                 <Route exact path='/about' component={AboutPage} />
-                <Route exact path='/example' component={ExamplePage} />
+                <Route exact path='/artist/:id' component={ExamplePage} />
               </>
             </Switch>
           </>

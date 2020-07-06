@@ -8,7 +8,7 @@ const ArtistItem = ({ item }) => {
     <>
       <Link
         to={{
-          pathname: '/example',
+          pathname: `/artist/${item.idArtist}`,
           artistProps: {
             artist: item,
           },
