@@ -34,12 +34,14 @@ export default function ArtistsList({ items, isLoading }) {
         <div>Did not find an artist with that name...</div>
       ) : (
         <div>
-          {items.map((item) => (
-            <ArtistCard key={uuid()} item={item} />
-          ))}
-          {items.map((item) => (
-            <ArtistItem key={uuid()} item={item} />
-          ))}
+          <section className='cards-list'>
+            {items.map((item) => (
+              <ArtistItem key={uuid()} item={item} />
+            ))}
+            {/* {items.map((item) => (
+              <ArtistCard key={uuid()} item={item} />
+            ))} */}
+          </section>
         </div>
       )}
     </div>
