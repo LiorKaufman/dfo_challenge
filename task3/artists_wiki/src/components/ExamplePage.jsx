@@ -19,13 +19,13 @@ export default function ExamplePage(props) {
     <>
       {item ? (
         <>
-          {edit ? (
-            <div>
+          <div className='my-container'>
+            {edit ? (
               <EditPage toggleEdit={toggleEdit} item={item} />
-            </div>
-          ) : (
-            <ArtistCard item={item} toggleEdit={toggleEdit} />
-          )}
+            ) : (
+              <ArtistCard item={item} toggleEdit={toggleEdit} />
+            )}
+          </div>
         </>
       ) : (
         <div>

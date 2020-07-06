@@ -17,9 +17,9 @@ export default function ArtistCard({ item, toggleEdit }) {
         `
       );
 
-      console.log(result);
+      const theAlbums = result.data.album === null ? [] : result.data.album;
 
-      setAlbums(result.data.album);
+      setAlbums(theAlbums);
       setIsLoading(false);
     };
 
@@ -66,27 +66,28 @@ export default function ArtistCard({ item, toggleEdit }) {
         <>
           <h3>Albums:</h3>
           <div className='container albums-list'>
-            {albums.map((album) => (
-              <div key={album.idAlbum} className='album-card'>
-                <div className='d-flex justify-content-center align-items-center'>
-                  <img
-                    src={
-                      album.strAlbumThumb
-                        ? `${album.strAlbumThumb}/preview`
-                        : noImage
-                    }
-                    alt='album'
-                    className='album-img'
-                  />
-                  <div className='album-text'>
-                    <h5>
-                      <strong>{album.strAlbum}</strong>
-                    </h5>
-                    <span>Year Released: {album.intYearReleased}</span>
+            {albums !== null &&
+              albums.map((album) => (
+                <div key={album.idAlbum} className='album-card'>
+                  <div className='d-flex justify-content-center align-items-center'>
+                    <img
+                      src={
+                        album.strAlbumThumb
+                          ? `${album.strAlbumThumb}/preview`
+                          : noImage
+                      }
+                      alt='album'
+                      className='album-img'
+                    />
+                    <div className='album-text'>
+                      <h5>
+                        <strong>{album.strAlbum}</strong>
+                      </h5>
+                      <span>Year Released: {album.intYearReleased}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </>
       )}

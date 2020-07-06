@@ -121,7 +121,11 @@ a {
   text-align: center;
   margin: 1.5rem;
 }
-
+code,
+#editor {
+  font-family: 'Source Code Pro', monospace;
+  width: 100%;
+}
 .album-img {
   max-width: 100%;
   max-height: 100%;
@@ -134,6 +138,38 @@ a {
   font-weight: 800;
   font-size: 1rem;
   margin: 3px;
+}
+.edit-page {
+  height: auto;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.my-container {
+  margin-bottom: 1.5rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.about-col {
+  color: #333;
+  border-radius: 8px;
+  border: 2px solid lightblue;
+  height: 220px;
+  max-width: 300px;
+  margin: 1rem;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  list-style: none;
 }
 
 @media (max-width: 800px) {
@@ -149,6 +185,9 @@ a {
     height: 100vh;
     overflow: auto;
   }
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 500px) {
@@ -163,5 +202,8 @@ a {
   .my-container {
     height: 100vh;
     overflow: auto;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
   }
 }
