@@ -121,7 +121,10 @@ a {
   text-align: center;
   margin: 1.5rem;
 }
-
+code,
+#editor {
+  font-family: 'Source Code Pro', monospace;
+}
 .album-img {
   max-width: 100%;
   max-height: 100%;
@@ -134,6 +137,10 @@ a {
   font-weight: 800;
   font-size: 1rem;
   margin: 3px;
+}
+
+#editor {
+  width: 100%;
 }
 
 @media (max-width: 800px) {

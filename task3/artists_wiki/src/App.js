@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // Styles
 import './App.css';
+import 'highlight.js/styles/dracula.css';
 
 // Components
 import Navbar from './components/Navbar';
